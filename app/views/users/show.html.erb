@@ -2,13 +2,13 @@
 <div>
   <table class="table table-bordered table-condensed user-table">
     <tr>
-      <td>名前</td>
-      <td>所属</td>
+      <td>名前 : <%= @user.name %></td>
+      <td>所属 : <%= @user.affiliation.present? ? @user.affiliation: "未所属" %></td>
       <td>月初日</td>
       <td>月末日</td>
     </tr>
     <tr>
-      <td><%= @user.name %></td>
+      <td>社員番号 : <%= @user.employee_num.present? ? @user.employee_num: "0" %></td>
       <td></td>
       <td></td>
       <td></td>
