@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210823112024) do
+ActiveRecord::Schema.define(version: 20210826012238) do
+
+  create_table "items", force: :cascade do |t|
+    t.date "worked_on"
+    t.string "note"
+    t.string "stock"
+    t.string "lot"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "expire"
+    t.integer "unit_price"
+    t.string "material_name"
+    t.integer "demand_unit"
+    t.integer "producing_unit"
+    t.integer "yield"
+    t.integer "orders_num"
+    t.index ["user_id"], name: "index_items_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"

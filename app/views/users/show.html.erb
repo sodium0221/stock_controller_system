@@ -10,8 +10,30 @@
     <tr>
       <td>社員番号 : <%= @user.employee_num.present? ? @user.employee_num: "0" %></td>
       <td></td>
-      <td></td>
-      <td></td>
+      <td><%= l(@first_day, format: :short) %></td>
+      <td><%= l(@last_day, format: :short) %></td>
     </tr>
+  </table>
+</div>
+
+<div>
+  <table class="table table-bordered table-condensed table-hover" id="table-items">
+    <thead>
+      <tr>
+        <th width="10%">日付</th>
+        <th width="10%">曜日</th>
+        <th>備考</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% (@first_day..@last_day).each do |day| %>
+        <tr>
+          <td><%= l(day, format: :short) %></td>
+          <td><%= $days_of_the_week[day.wday] %></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 </div>

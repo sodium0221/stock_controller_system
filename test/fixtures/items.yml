@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  worked_on: 2021-08-24
+  note: MyString
+  stock: MyString
+  lot: MyString
+  user: one
+
+two:
+  worked_on: 2021-08-24
+  note: MyString
+  stock: MyString
+  lot: MyString
+  user: two

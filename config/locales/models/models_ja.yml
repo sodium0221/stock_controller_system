@@ -14,3 +14,9 @@ ja:
           affiliation: 所属
           superior: 上長
           employee_num: 社員番号
+        item:
+          worked_on: 日付
+          note: 備考
+          stock: 在庫
+          lot: ロット
+          
