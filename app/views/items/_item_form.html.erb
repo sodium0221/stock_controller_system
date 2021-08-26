@@ -1,0 +1,6 @@
+<%= form_with(model: @item, loacal: true) do |f| %>
+  
+  <%= f.label :material_name, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :name, class: "form-control" %>
+  
+<% end %>

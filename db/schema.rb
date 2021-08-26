@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210826012238) do
+ActiveRecord::Schema.define(version: 20210826053947) do
 
   create_table "items", force: :cascade do |t|
     t.date "worked_on"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20210826012238) do
     t.integer "producing_unit"
     t.integer "yield"
     t.integer "orders_num"
+    t.boolean "allergy"
+    t.string "contact_order"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
