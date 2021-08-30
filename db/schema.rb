@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210826053947) do
+ActiveRecord::Schema.define(version: 20210827141203) do
 
   create_table "items", force: :cascade do |t|
     t.date "worked_on"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20210826053947) do
     t.string "affiliation"
     t.integer "employee_num"
     t.boolean "superior"
+    t.date "worked_day"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

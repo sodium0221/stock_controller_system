@@ -19,4 +19,9 @@ ja:
           note: 備考
           stock: 在庫
           lot: ロット
+          material_name: 原料名
+          contact_order: 発注先
+          unit_price: 単価
+          allergy: アレルギー
+          
           

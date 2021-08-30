@@ -9,9 +9,9 @@
     </tr>
     <tr>
       <td>社員番号 : <%= @user.employee_num.present? ? @user.employee_num: "0" %></td>
+      <td><%= l(Date.current, format: :short) %></td>
       <td></td>
-      <td><%= l(@first_day, format: :short) %></td>
-      <td><%= l(@last_day, format: :short) %></td>
+      <td></td>
     </tr>
   </table>
 </div>
@@ -27,13 +27,6 @@
     </thead>
     
     <tbody>
-      <% (@first_day..@last_day).each do |day| %>
-        <tr>
-          <td><%= l(day, format: :short) %></td>
-          <td><%= $days_of_the_week[day.wday] %></td>
-          <td></td>
-        </tr>
-      <% end %>
     </tbody>
   </table>
 </div>

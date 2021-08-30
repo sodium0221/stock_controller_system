@@ -1,3 +1,33 @@
 // Place all the styles related to the Items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.label-item--new {
+  margin-top: 5px;
+}
+
+.btn-item--new {
+  margin-top: 5px;
+}
+
+.checkbox-record {
+  width: auto;
+  margin-left: 25px;
+  span {
+    font-weight: normal;
+  }
+}
+
+.new-item-font {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.label-item--edit {
+  margin-top: 5px;
+}
+
+.label-item--btn {
+  margin-top: 5px;
+}

@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
-  belongs_to :user
   
-  validates :worked_on, presence: true
   validates :note, length: { maximum: 30 }
+  validates :material_name, presence: true
+  validates :contact_order, presence: true
+  validates :unit_price, presence: true
 end

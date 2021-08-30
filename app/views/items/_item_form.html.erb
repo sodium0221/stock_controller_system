@@ -1,6 +1,22 @@
-<%= form_with(model: @item, loacal: true) do |f| %>
+<%= form_with(model: @item, local: true) do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
   
   <%= f.label :material_name, class: "label-#{yield(:class_text)}" %>
-  <%= f.text_field :name, class: "form-control" %>
+  <%= f.text_field :material_name, class: "form-control" %>
   
+  <%= f.label :contact_order, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :contact_order, class: "form-control" %>
+  
+  <%= f.label :unit_price, class: "label-#{yield(:class_text)}" %>
+  <%= f.number_field :unit_price, class: "form-control" %>
+  
+  <p class="">アレルギー物質の有無</p>
+  <div>
+    <%= f.radio_button :allergy, :false, checked: true %>
+    <%= f.label :allergy, "なし", { value: :false, style: "display: inline-block" } %>
+    <%= f.radio_button :allergy, :true %>
+    <%= f.label :allergy, "あり", { value: :true, style: "display: inline-block" } %>
+  </div>
+  
+  <%= f.submit yield(:button_text), class: "btn btn-primary btn-block btn-#{yield(:class_text)}" %>
 <% end %>
