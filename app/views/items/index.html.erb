@@ -1,8 +1,16 @@
-<h1>一覧</h1>
+<% provide(:title, "原料一覧") %>
+
+<h1>原料一覧</h1>
+<div class="col-md-10 col-md-offset-1">
+  <%= form_with(url: items_path, method: :get, local: true) do |f| %>
+    <%= f.text_field :search %>
+    <%= f.submit '検索', name: nil, class: "btn btn-sm btn-primary" %>
+  <% end %>
+</div>
 
 <div class="col-md-10 col-md-offset-1">
   <%= will_paginate %>
-  <table class="table table-condensed table-hover">
+  <table class="table table-condensed table-hover" id="table-items">
     <thead>
       <tr> 
         <th>原料名</th>
@@ -14,7 +22,7 @@
     
     <% @items.each do |item| %>
       <tr>
-        
+        <td><%= item.id %></td>
         <td><%= link_to item.material_name, edit_item_path(item) %></td>
         <td><%= item.contact_order %></td>
         <td><%= item.unit_price %></td>

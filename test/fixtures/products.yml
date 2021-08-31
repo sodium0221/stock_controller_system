@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lot: MyString
+  stock_amount: MyString
+  demand_unit: 1
+  producing_unit: 1
+  yield: 1
+  orders_num: 1
+  item: one
+
+two:
+  lot: MyString
+  stock_amount: MyString
+  demand_unit: 1
+  producing_unit: 1
+  yield: 1
+  orders_num: 1
+  item: two

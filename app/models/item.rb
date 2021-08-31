@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  has_many :products, dependent: :destroy
   
   validates :note, length: { maximum: 30 }
   validates :material_name, presence: true

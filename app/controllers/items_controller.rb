@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   
   def index
     @items = Item.paginate(page: params[:page])
+    @items = @items.where('material_name LIKE ?', "%#{params[:search]}%") if params[:search].present?
   end
   
   def show
