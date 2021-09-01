@@ -18,5 +18,11 @@
     <%= f.label :allergy, "あり", { value: :true, style: "display: inline-block" } %>
   </div>
   
-  <%= f.submit yield(:button_text), class: "btn btn-primary btn-block btn-#{yield(:class_text)}" %>
+  <div class="center">
+    <%= f.submit yield(:button_text), class: "btn btn-primary btn-block btn-#{yield(:class_text)}" %>
+    <button type="button" class="btn btn-default btn-<%= yield(:class_text) %>" data-dismiss="modal">
+      キャンセル
+    </button>   
+  </div>
+  
 <% end %>

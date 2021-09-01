@@ -17,25 +17,38 @@
         <th>発注先</th>
         <th>単価</th>
         <th>アレルギー</th>
+        <th>編集</th>
+        <th>入荷</th>
+        <th>削除</th>
       </tr>
     </thead>
     
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.id %></td>
-        <td><%= link_to item.material_name, edit_item_path(item) %></td>
+        <td><%= item.material_name %></td>
         <td><%= item.contact_order %></td>
         <td><%= item.unit_price %></td>
-        <td><%= item.allergy %></td>
+        <td class="<%= allergy_color(item.allergy) %>"><%= presence_or_absence_of_allergy(item.allergy) %></td>
+        <% if current_user.admin? %>
         <td>
-          <% if current_user.admin? %>
-            <%= link_to "削除", item, method: :delete,
-            data: { confirm: "削除してよろしいですか？" },
-            class: "btn btn-danger" %>
-          <% end %>
+          <%= link_to "編集", edit_material_info_item_path(item), remote: true, class: "btn btn-success" %>
         </td>
+        <td>
+          <%= link_to "入荷", new_item_product_path(item), remote: true, class: "btn btn-primary" %>
+        </td>
+        <td>
+          <%= link_to "削除", item, method: :delete,
+          data: { confirm: "削除してよろしいですか？" },
+          class: "btn btn-danger" %>
+        </td>
+        <% end %>
       </tr>
     <% end %>
   </table>
   <%= will_paginate %>
 </div>
+
+<!-- モーダルウィンドウ表示 -->
+<div id="edit-material-info" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+
+<div id="new" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>

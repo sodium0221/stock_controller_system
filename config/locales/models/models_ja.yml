@@ -23,5 +23,8 @@ ja:
           contact_order: 発注先
           unit_price: 単価
           allergy: アレルギー
-          
+        product:
+          log: ロット
+          expire: 賞味期限
+          rog_amount: 入荷量
           

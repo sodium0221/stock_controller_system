@@ -8,6 +8,15 @@ Rails.application.routes.draw do
   
   resources :users
   resources :items do
-    resources :products
+    member do
+      get 'edit_material_info'
+      patch 'update_material_info'
+    end
+    resources :products do
+      member do
+        get 'new_rog'
+        patch 'create_rog'
+      end
+    end
   end
 end
