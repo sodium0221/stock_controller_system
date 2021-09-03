@@ -12,16 +12,18 @@
     <div class="modal-body">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <%= form_with(scope: :product, url: new_item_product_path, local: true) do |f| %>
-            
-            <%= f.label :lot, class: "label-#{yield(:class_text)}" %>
-            <%= f.text_field :lot, class: "form-control" %>
-            
-            <%= f.label :expire, class: "label-#{yield(:class_text)}" %>
-            <%= f.text_field :expire, class: "form-control" %>
-            
-            <%= f.label :rog_amount, class: "label-#{yield(:class_text)}" %>
-            <%= f.number_field :rog_amount, class: "form-control" %>
+          <%= form_with(model: @item, url: item_products_path(@item), method: :post, local: true) do |f| %>
+            <%= f.fields_for :products do |product| %>
+              
+              <%= product.label :lot, class: "label-#{yield(:class_text)}" %>
+              <%= product.text_field :lot, class: "form-control" %>
+              
+              <%= product.label :rog_amount, class: "label-#{yield(:class_text)}" %>
+              <%= product.number_field :rog_amount, class: "form-control" %>
+              
+              <%= product.label :expire, class: "label-#{yield(:class_text)}" %>
+              <%= product.date_field :expire, class: "form-control" %>
+            <% end %>
             
             <div class="center">
               <%= f.submit yield(:button_text), class: "btn btn-primary btn-#{yield(:class_text)}" %>

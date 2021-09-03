@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :update, :destroy, :edit_material_info]
+  before_action :set_item, only: [:edit, :update, :destroy, :edit_material_info, :update_material_info]
   before_action :logged_in_user, only: [:show, :edit, :update, :index, :destroy]
   
   def index
@@ -28,12 +28,6 @@ class ItemsController < ApplicationController
   end
   
   def update
-    if @item.update_attributes(item_params)
-      flash[:success] = "原料情報を更新しました。"
-      redirect_to items_path
-    else
-      render :edit
-    end 
   end
   
   def destroy
@@ -46,6 +40,15 @@ class ItemsController < ApplicationController
   end 
   
   def update_material_info
+    if @item.update_attributes(item_params)
+      flash[:success] = "原料情報を更新しました。"
+      redirect_to items_path
+    else
+      @items = Item.paginate(page: params[:page])
+      @items = @items.where('material_name LIKE ?', "%#{params[:search]}%") if params[:search].present?
+      flash[:danger] = "入力エラーが#{@item.errors.count}件ありました。<br>" + @item.errors.full_messages.join("<br>")
+      redirect_to action: :index
+    end
   end
   
   private

@@ -12,7 +12,7 @@
     <div class="modal-body">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <%= form_with(model: @item, local: true) do |f| %>
+          <%= form_with(model: @item, url: update_material_info_item_path(@item), local: true) do |f| %>
             <%= render 'shared/error_messages', model: f.object %>
             
             <%= f.label :material_name, class: "label-#{yield(:class_text)}" %>
