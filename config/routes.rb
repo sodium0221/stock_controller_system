@@ -14,8 +14,8 @@ Rails.application.routes.draw do
     end
     resources :products do
       member do
-        get 'new_rog'
-        patch 'create_rog'
+        get 'production_new'
+        patch 'production_create'
       end
     end
   end

@@ -1,0 +1,38 @@
+<% provide(:title, "原料") %>
+
+<h1><%= @item.material_name %></h1>
+
+<div class="col-md-10 col-md-offset-1">
+  <table class="table table-condensed table-hover" id="table-products">
+    <thead>
+      <tr>
+        <th>日付</th>
+        <th>Lot</th>
+        <th>賞味期限</th>
+        <th>入荷量</th>
+        <th>使用量</th>
+        <th>在庫</th>
+      </tr>
+    </thead>
+    
+    <tr>
+      <td>前月繰越分</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>kg</td>
+    </tr>
+    
+    <% @products.each do |pro| %>
+      <tr>
+        <td><%= l(pro.created_at, format: :day) %></td>
+        <td><%= pro.lot %></td>
+        <td><%= pro.expire %></td>
+        <td><%= pro.rog_amount %> kg</td>
+        <td></td>
+        <td>kg</td>
+      </tr>
+    <% end %>
+  </table>
+</div>

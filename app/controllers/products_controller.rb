@@ -1,5 +1,10 @@
 class ProductsController < ApplicationController
   
+  def index
+    @item = Item.find(params[:item_id])
+    @products = @item.products.all
+  end
+  
   def new
     @item = Item.find(params[:item_id])
     @product = Product.new
@@ -17,6 +22,12 @@ class ProductsController < ApplicationController
       flash[:danger] = "入力エラーが#{@product.errors.count}件ありました。<br>" + @product.errors.full_messages.join("<br>")
       redirect_to controller: :items, action: :index
     end 
+  end
+  
+  def production_new
+  end 
+  
+  def production_create
   end
   
   private
