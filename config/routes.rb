@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'goods/new'
+
   root 'static_pages#top'
   get '/signup', to: 'users#new'
   
@@ -7,6 +9,15 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   
   resources :users
+  resources :goods do
+    member  do
+      get 'stock'
+      get 'filling_report'
+      patch 'filling_report_func'
+    end
+  end
+  
+  get '/product_reports', to: 'goods#product_report'
   resources :items do
     member do
       get 'edit_material_info'

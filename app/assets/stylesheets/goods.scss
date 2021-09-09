@@ -1,0 +1,62 @@
+// Place all the styles related to the Goods controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* 製品登録フォーム */
+
+.label-good--new {
+  margin-top: 5px;
+}
+
+.btn-good--new {
+  margin-top: 10px;
+}
+
+.new_quantity_field {
+  width: 30%;
+}
+
+#goods_new_label {
+  font-size: 20px;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+
+/* 製品編集モーダル */
+
+.label-goods--edit {
+  margin-top: 5px;
+}
+
+.btn-goods--edit{
+  margin-top: 5px;
+  width: 30%;
+}
+
+/* 製品一覧 */
+
+#table-goods {
+  margin-top: 5px;
+  th {
+    vertical-align: middle;
+    text-align: center;
+  }
+  td {
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+
+/* 生産報告ページ */
+
+#product_reports {
+  margin-top: 5px;
+  th {
+    vertical-align: middle;
+    text-align: left;
+  }
+  td {
+    vertical-align: middle;
+    text-align: left;
+  }
+}

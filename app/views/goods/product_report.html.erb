@@ -1,0 +1,28 @@
+<% provide(:title, "生産報告") %>
+
+<h1>生産報告</h1>
+
+<div class="col-md-10 col-md-offset-1">
+  <table class="table table-condensed table-hover" id="product_reports">
+    <thead>
+      <tr>
+        <th>生産品目</th>
+        <th>充填</th>
+        <th>造粒</th>
+      </tr>
+    </thead>
+    
+    <% @goods.each do |g| %>
+      <tr>
+        <td>
+          <%= g.client_name %>  <%= g.goods_name %> <%= g.quantity %>
+        </td>
+        <td><%= link_to "生産報告", filling_report_good_path(g), remote: true, class: "btn btn-primary " %></td>
+        <td><%= link_to "生産報告", '#', class: "btn btn-success " %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<!-- モーダルウィンドウ表示 -->
+<div id="filling-report" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>

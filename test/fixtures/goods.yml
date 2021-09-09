@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lot: MyString
+  expire: 2021-09-05
+  amount: 1
+  article: MyString
+  user: one
+
+two:
+  lot: MyString
+  expire: 2021-09-05
+  amount: 1
+  article: MyString
+  user: two

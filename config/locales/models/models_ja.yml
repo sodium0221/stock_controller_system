@@ -27,4 +27,10 @@ ja:
           log: ロット
           expire: 賞味期限
           rog_amount: 入荷量
+        good:
+          lot: ロット
+          expire: 賞味期限
+          goods_name: 製品名
+          quantity: 入数
+          client_name: 発注元会社名
           

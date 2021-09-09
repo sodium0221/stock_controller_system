@@ -27,6 +27,17 @@
     </thead>
     
     <tbody>
+      <tr>
+        <td>
+          <li><%= link_to "原料登録", new_item_path, class: "btn btn-primary" %></li>
+          <li><%= link_to "原料一覧", items_path, class: "btn btn-success" %></li>
+          <li><%= link_to "製品登録", new_good_path, class: "btn btn-primary" %></li>
+          <li><%= link_to "製品一覧", goods_path, class: "btn btn-success" %></li>
+        </td>
+      </tr>
+      <div>
+        <%= link_to "生産報告", product_reports_path, class: "btn btn-primary" %>
+      </div>
     </tbody>
   </table>
 </div>

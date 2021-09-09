@@ -1,0 +1,40 @@
+<% provide(:title, "製品一覧") %>
+
+<h1>製品一覧</h1>
+
+<div class="col-md-6 col-md-offset-3">
+  <table class="table table-condensed table-hover" id="table-goods">
+    <thead>
+      <tr>
+        <th>発注元</th>
+        <th>製品名</th>
+        <th>入数</th>
+        <th>在庫確認</th>
+        <th>編集</th>
+        <th>削除</th>
+      </tr>
+    </thead>
+    
+    <% @goods.each do |g| %>
+      <tr>
+        <td><%= g.client_name %></td>
+        <td><%= g.goods_name %></td>
+        <td><%= g.quantity %></td>
+        <td>
+          <%= link_to "在庫確認", stock_good_path(g), class: "btn btn-primary" %>
+        </td>
+        <td>
+          <%= link_to "編集", edit_good_path(g), remote: true, class: "btn btn-success" %>
+        </td>
+        <td>
+          <%= link_to "削除", g, method: :delete,
+          data: { confirm: "削除してよろしいですか？" },
+          class: "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<!-- モーダルウィンドウ表示 -->
+<div id="edit" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>

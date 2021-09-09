@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  belongs_to :good
   has_many :products, dependent: :destroy
   
   validates :note, length: { maximum: 30 }

@@ -1,0 +1,34 @@
+<% provide(:title, "製品在庫") %>
+
+<h1><%= @good.client_name %> <%= @good.goods_name %> <%= @good.quantity %>包</h1>
+
+<div class="col-md-10 col-md-offset-1">
+  <table class="table table-condensed table-hover" id="table-goods_stock" >
+    <thead>
+      <th>日付</th>
+      <th>Lot</th>
+      <th>賞味期限</th>
+      <th>生産量</th>
+      <th>出荷量</th>
+      <th>在庫</th>
+    </thead>
+    
+    <tr>
+      <td>前月繰越分</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>c/s</td>
+    </tr>
+    
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>c/s</td>
+      </tr>
+  </table>
+</div>
